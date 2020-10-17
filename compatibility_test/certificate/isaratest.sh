@@ -1,0 +1,2 @@
+$OPENSSL reqQSExtend -engine $ENGINE -reqin golang_classic_san_csr.pem -reqout server_hybrid.csr -privin server.key -pubqs dilithium_pub.pem -privqs dilithium_priv.pem
+$OPENSSL x509 -req -days 360 -in server_hybrid.csr -CA root_classic_cert.pem -CAkey root_classic.pem -CAcreateserial -out server_classic.crt -sha256
