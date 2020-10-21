@@ -20,10 +20,11 @@ import (
 	"crypto/rand"
 	b64 "encoding/base64"
 	"encoding/pem"
-	"io/ioutil"
 	"log"
 	"testing"
 )
+
+var msg = []byte("Hello, world!\n\n")
 
 var hssPubKey = `
 -----BEGIN PUBLIC KEY-----
@@ -218,11 +219,6 @@ func TestImportExportHSS(t *testing.T) {
 		t.Fatalf("IqrHSSImportPublicKey error: %s\n", err)
 	}
 
-	msgFile := "testdata/message.txt"
-	msg, err := ioutil.ReadFile(msgFile)
-	if err != nil {
-		t.Fatalf("Failed to read %s\n", msgFile)
-	}
 	err = IqrHSSVerify(publicKey, msg, int64(len(msg)), sig, int64(len(sig)))
 	if err != nil {
 		t.Fatalf("IqrHSSVerify failed: %s\n", err)

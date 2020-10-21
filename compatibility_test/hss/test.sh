@@ -15,7 +15,15 @@ fi
 #export IQR_TOOLKIT_PATH=
 export CGO_ENABLED=1
 export CGO_CPPFLAGS=-I$IQR_TOOLKIT_PATH
-export CGO_LDFLAGS=$IQR_TOOLKIT_PATH/lib_x86_64/libiqr_toolkit.a
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    MINGW*)
+        export CGO_LDFLAGS=$IQR_TOOLKIT_PATH/lib_x86_64/libiqr_toolkit_static.lib
+        ;;
+    *)
+        export CGO_LDFLAGS=$IQR_TOOLKIT_PATH/lib_x86_64/libiqr_toolkit.a
+        ;;
+esac
 
 # Generate HSS key pair
 $OPENSSL genpkey -engine $ENGINE -algorithm hss -pkeyopt state_filename:hss_state.bin -pkeyopt sign_operations:2E20 -pkeyopt optimization:fast -pkeyopt strategy:full -out isara_hss_key.pem
