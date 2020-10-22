@@ -56,3 +56,7 @@ func IqrInitRNG(ctx **IqrContext, rng **IqrRNG, rand io.Reader) error {
 func IqrRNGDestroy(rng **IqrRNG) error {
 	return errors.New("Built without ISARA Toolkit")
 }
+
+func IqrToolkitLinked() bool {
+	return false
+}

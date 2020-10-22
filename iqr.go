@@ -153,3 +153,7 @@ func IqrInitRNG(ctx **IqrContext, rng **IqrRNG, rand io.Reader) error {
 	}
 	return IqrRNGInitialize(rng, seed)
 }
+
+func IqrToolkitLinked() bool {
+	return true
+}
