@@ -9,7 +9,7 @@ For more information about ISARA and our quantum-safe solutions, visit www.isara
 
 ## Building
 
-This wrapper requires the [ISARA toolkit](https://www.isara.com/toolkit/2/doc/guide/guide.html).  Please contact info@isara.com for more information.
+This wrapper requires the [ISARA toolkit](https://www.isara.com/toolkit/2/doc/guide/guide.html).  Please contact quantumsafe@isara.com for more information.
 
 1. Extract the toolkit.  In the rest of these instructions we'll assume it has been extracted to `~/iqr_toolkit`.
 2. Set the environment variable so the wrapper can find the toolkit.
@@ -26,7 +26,7 @@ If `IQR_TOOLKIT_PATH` is not set, the wrapper will still build but any functions
 
 ## OpenSSL Connector Compatibility Tests
 
-To run the OpenSSL Connector compatibility tests you need [ISARA Catalyst OpenSSL Connector 2.0](https://www.isara.com/openssl/2.0/).  Please contact info@isara.com for more information.
+To run the OpenSSL Connector compatibility tests you need [ISARA Catalyst OpenSSL Connector 2.0](https://www.isara.com/openssl/2.0/).  Please contact quantumsafe@isara.com for more information.
 
 1. Using the OpenSSL Connector guide, build and install OpenSSL Connector.  In the rest of the instructions we'll assume it has been installed to `/usr/local/isara_ssl`.
 2. Set the environment so the tests can find the toolkit and OpenSSL Connector
